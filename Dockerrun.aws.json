@@ -1,0 +1,61 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "volumes": [
+    {
+      "name": "mongodb",
+      "host": {
+        "sourcePath": "/var/app/current/mongodb"
+      }
+    },
+    {
+      "name": "nginx",
+      "host": {
+        "sourcePath": "/var/app/current/nginx"
+      }
+    }
+  ],
+  "containerDefinitions": [
+    {
+      "name": "api",
+      "image": "720748268942.dkr.ecr.us-east-2.amazonaws.com/dealbackend:0.0.12",
+      "hostname": "api",
+      "essential": false,
+      "links": ["mongo"],
+      "memory": 256
+    },
+    {
+      "name": "mongo",
+      "image": "mongo:4",
+      "hostname": "mongo",
+      "essential": false,
+      "mountPoints": [
+        {
+          "sourceVolume": "mongodb",
+          "containerPath": "/data/db",
+          "readOnly": false
+        }
+      ],
+      "memory": 256
+    },
+    {
+      "name": "nginx",
+      "image": "nginx",
+      "essential": true,
+      "hostname": "nginx",
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links": ["api", "web"],
+      "memory": 256,
+      "mountPoints": [
+        {
+          "sourceVolume": "nginx",
+          "containerPath": "/etc/nginx/conf.d/"
+        }
+      ]
+    }
+  ]
+}

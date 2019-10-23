@@ -1,0 +1,53 @@
+{
+  "name": "rest-well",
+  "version": "0.0.1",
+  "description": "Simple rest APIs example",
+  "main": "src/server.js",
+  "scripts": {
+    "lint": "eslint --ignore-path .gitignore .",
+    "depcheck": "npm-check",
+    "pretest": "npm run lint",
+    "test": "mocha './test/**/*Spec.js' --timeout=10000 --exit",
+    "coverage": "nyc npm run test",
+    "start": "docker-compose up --build -d && docker attach api",
+    "bye": "docker-compose down",
+    "dev": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BassemGhoniem/rest-well.git"
+  },
+  "keywords": [
+    "REST",
+    "APIs",
+    "Deployment"
+  ],
+  "author": "Bassem Ghoniem <bassem.ghoniem92@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BassemGhoniem/rest-well/issues"
+  },
+  "homepage": "https://github.com/BassemGhoniem/rest-well#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-chai-friendly": "^0.4.1",
+    "eslint-plugin-import": "^2.18.2",
+    "mocha": "^6.2.2",
+    "nodemon": "^1.19.4",
+    "npm-check": "^5.9.0",
+    "nyc": "^14.1.1",
+    "supertest": "^4.0.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "lodash": "^4.17.15",
+    "mongoose": "^5.7.6",
+    "mongoose-errors": "^1.0.1",
+    "otplib": "^11.0.1",
+    "swagger-ui-express": "^4.1.2",
+    "twilio": "^3.36.0"
+  }
+}
