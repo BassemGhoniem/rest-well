@@ -17,7 +17,7 @@
   "containerDefinitions": [
     {
       "name": "api",
-      "image": "720748268942.dkr.ecr.us-east-2.amazonaws.com/dealbackend:0.0.12",
+      "image": "bassemghoniem/rest-well",
       "hostname": "api",
       "essential": false,
       "links": ["mongo"],
@@ -48,7 +48,7 @@
           "containerPort": 80
         }
       ],
-      "links": ["api", "web"],
+      "links": ["api"],
       "memory": 256,
       "mountPoints": [
         {
