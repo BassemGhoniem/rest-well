@@ -10,10 +10,7 @@
   },
   "servers": [
     {
-      "url": "https://petstore.swagger.io/v2"
-    },
-    {
-      "url": "http://petstore.swagger.io/v2"
+      "url": "http://http://rest-well.us-east-2.elasticbeanstalk.com/api"
     }
   ],
   "tags": [
@@ -33,7 +30,7 @@
           "coffee-machine"
         ],
         "summary": "Filter Coffee Machines",
-        "description": "Finds Coffee Machines by product type and water line, in the case of there's no params, data returned without filtering",
+        "description": "Finds Coffee Machines by product type and water line",
         "parameters": [
           {
             "name": "product_type",
@@ -74,8 +71,14 @@
             }
           },
           "400": {
-            "description": "Invalid status value",
-            "content": {}
+            "description": "Invalid params",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
           }
         }
       }
@@ -86,7 +89,7 @@
           "coffee-pod"
         ],
         "summary": "Filter Coffee Pods",
-        "description": "Finds Coffee Pods by product type, coffee flavor, and pack size, in the case of there's no params, data returned without filtering",
+        "description": "Finds Coffee Pods by product type, coffee flavor, and pack size",
         "parameters": [
           {
             "name": "product_type",
@@ -149,8 +152,31 @@
             }
           },
           "400": {
-            "description": "Invalid status value",
-            "content": {}
+            "description": "Invalid params",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "object",
+            "properties": {
+              "message": {
+                "type": "string"
+              }
+            }
           }
         }
       }

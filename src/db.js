@@ -9,3 +9,6 @@ module.exports = async (uri) => {
     poolSize: 10,
   });
 };
+
+module.exports.dropDatabase = () => mongoose.connection.db.dropDatabase();
+module.exports.close = () => mongoose.connection.close();
