@@ -1,5 +1,10 @@
 # Swenson He Coding Challenge [![Build Status](https://travis-ci.org/BassemGhoniem/rest-well.svg?branch=master)](https://travis-ci.org/BassemGhoniem/rest-well)
 
+## pre-requiste
+- npm
+- docker
+- docker-compose
+
 ## To run test locally:
 - `cp .env-example .env`
 - `npm run start`
