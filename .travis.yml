@@ -20,7 +20,7 @@ deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
   app: "rest-well"
-  env: "RestWell-env"
+  env: "test"
   bucket_name: "elasticbeanstalk-us-east-2-471358053311"
   bucket_path: "rest-well"
   on:
