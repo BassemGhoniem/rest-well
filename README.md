@@ -1,4 +1,4 @@
-# Swenson He Coding Challenge
+# Swenson He Coding Challenge [![Build Status](https://travis-ci.org/BassemGhoniem/rest-well.svg?branch=master)](https://travis-ci.org/BassemGhoniem/rest-well)
 
 ## To run test locally:
 - `cp .env-example .env`
