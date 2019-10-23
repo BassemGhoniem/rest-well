@@ -10,7 +10,7 @@
   },
   "servers": [
     {
-      "url": "http://http://rest-well.us-east-2.elasticbeanstalk.com/api"
+      "url": "http://rest-well.us-east-2.elasticbeanstalk.com/api"
     }
   ],
   "tags": [
