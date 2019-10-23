@@ -24,7 +24,7 @@
     }
   ],
   "paths": {
-    "/coffe-machine/filter": {
+    "/coffee-machine/filter": {
       "get": {
         "tags": [
           "coffee-machine"
@@ -83,7 +83,7 @@
         }
       }
     },
-    "/coffe-pod/filter": {
+    "/coffee-pod/filter": {
       "get": {
         "tags": [
           "coffee-pod"
